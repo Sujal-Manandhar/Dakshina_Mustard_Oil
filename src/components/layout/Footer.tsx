@@ -101,14 +101,13 @@ export default function Footer() {
           
           {/* Brand Presentation Column (5 Cols) */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-flex items-center gap-3.5 mb-6 group">
-              <div className="w-13 h-13 relative rounded-full overflow-hidden border-2 border-amber-500 bg-white p-0.5 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+            <Link href="/" className="inline-flex items-center gap-4 mb-6 group">
+              <div className="w-12 h-18 sm:w-14 sm:h-20 relative shrink-0 group-hover:scale-105 transition-transform">
                 <Image
-                  src="/images/logo.png"
-                  alt="Dakshina Emblem"
-                  width={52}
-                  height={52}
-                  className="object-cover rounded-full"
+                  src="/images/products/roasted-1l.png"
+                  alt="Dakshina Mustard Oil Pouch"
+                  fill
+                  className="object-contain drop-shadow-lg"
                 />
               </div>
               <div>

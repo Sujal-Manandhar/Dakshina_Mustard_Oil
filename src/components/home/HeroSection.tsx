@@ -114,10 +114,10 @@ export default function HeroSection() {
 
               <div className="relative w-56 h-80 sm:w-64 sm:h-92 mx-auto my-2">
                 <Image
-                  src="/images/products/dakshina-1l.png"
+                  src="/images/products/roasted-1l.png"
                   alt={locale === 'ne' ? 'दक्षिणा तोरीको तेल आधिकारिक प्याकेजिङ' : 'Dakshina Mustard Oil Official Packaging'}
                   fill
-                  className="object-contain drop-shadow-md"
+                  className="object-contain drop-shadow-md rounded-lg"
                   priority
                 />
               </div>

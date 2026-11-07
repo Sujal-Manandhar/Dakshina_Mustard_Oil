@@ -62,14 +62,14 @@ export const products: Product[] = [
         volumeNe: '५०० मि.लि.',
         formatEn: 'Sealed Pouch & Bulk Carton',
         formatNe: 'सिल पाउच र कार्टुन प्याकिङ',
-        image: '/images/products/dakshina-500ml.png',
+        image: '/images/products/roasted-500ml.png',
       },
       {
         volumeEn: '1000 ml (1 Litre)',
         volumeNe: '१००० मि.लि. (१ लिटर)',
         formatEn: 'Sealed Pouch & Bulk Carton',
         formatNe: 'सिल पाउच र कार्टुन प्याकिङ',
-        image: '/images/products/dakshina-1l.png',
+        image: '/images/products/roasted-1l.png',
       },
     ],
     packaging: {
@@ -78,7 +78,7 @@ export const products: Product[] = [
     },
     processEn: 'Slow Roasted & Traditional Mill Pressing',
     processNe: 'परम्परागत भुट्ने र घरेलु मिल चेपुवा विधि',
-    image: '/images/products/dakshina-1l.png',
+    image: '/images/products/roasted-1l.png',
     badge: {
       en: 'Signature Roasted',
       ne: 'भुटेको तोरीको तेल',
@@ -111,14 +111,14 @@ export const products: Product[] = [
         volumeNe: '५०० मि.लि.',
         formatEn: 'Sealed Pouch & Bulk Carton',
         formatNe: 'सिल पाउच र कार्टुन प्याकिङ',
-        image: '/images/products/dakshina-500ml.png',
+        image: '/images/products/coldpress-500ml.png',
       },
       {
         volumeEn: '1000 ml (1 Litre)',
         volumeNe: '१००० मि.लि. (१ लिटर)',
         formatEn: 'Sealed Pouch & Bulk Carton',
         formatNe: 'सिल पाउच र कार्टुन प्याकिङ',
-        image: '/images/products/dakshina-coldpressed-1l.png',
+        image: '/images/products/coldpress-1l.png',
       },
     ],
     packaging: {
@@ -127,7 +127,7 @@ export const products: Product[] = [
     },
     processEn: 'Cold Press (No Heat Treatment / Kacchi Ghani)',
     processNe: 'कच्ची घानी बिना ताप प्राकृतिक निष्कासन',
-    image: '/images/products/dakshina-coldpressed-1l.png',
+    image: '/images/products/coldpress-1l.png',
     badge: {
       en: 'Cold Pressed / कच्ची घानी',
       ne: 'कच्ची घानी (कोल्ड प्रेस्ड)',

@@ -23,10 +23,10 @@ export default function BrandIntroSection() {
 
               <div className="relative w-52 h-76 sm:w-60 sm:h-88 mx-auto my-2">
                 <Image
-                  src="/images/products/dakshina-1l.png"
+                  src="/images/products/roasted-1l.png"
                   alt={locale === 'ne' ? 'दक्षिणा तोरीको तेल' : 'Dakshina Mustard Oil Pouch'}
                   fill
-                  className="object-contain drop-shadow-sm"
+                  className="object-contain drop-shadow-sm rounded-lg"
                 />
               </div>
 

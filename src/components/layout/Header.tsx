@@ -50,13 +50,13 @@ export default function Header() {
           <nav className="flex items-center justify-between gap-4">
             
             {/* Brand Logo & Identity */}
-            <Link href="/" className="flex items-center gap-3.5 group shrink-0">
-              <div className="w-12 h-12 relative rounded-full overflow-hidden border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform duration-300 bg-white p-0.5 shrink-0">
+            <Link href="/" className="flex items-center gap-3 group shrink-0">
+              <div className="w-10 h-14 sm:w-11 sm:h-16 relative group-hover:scale-105 transition-transform duration-300 shrink-0">
                 <Image
-                  src="/images/logo.png"
-                  alt="Dakshina Brand Emblem"
+                  src="/images/products/roasted-1l.png"
+                  alt="Dakshina Mustard Oil Pouch"
                   fill
-                  className="object-cover"
+                  className="object-contain drop-shadow-md"
                   priority
                 />
               </div>

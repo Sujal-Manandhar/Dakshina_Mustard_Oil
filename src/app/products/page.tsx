@@ -150,12 +150,12 @@ export default function ProductsPage() {
 
               {/* Photo Showcase in Box */}
               <div className="lg:col-span-4 flex justify-center">
-                <div className="w-48 h-64 relative bg-white rounded-xl border border-amber-500/30 p-4 shadow-sm flex items-center justify-center">
+                <div className="w-52 h-72 relative bg-white rounded-xl border border-amber-500/30 p-2 shadow-sm flex items-center justify-center">
                   <Image
-                    src="/images/products/dakshina-1l.png"
+                    src="/images/products/roasted-1l.png"
                     alt="Packaging Carton and Pouch"
                     fill
-                    className="object-contain p-2"
+                    className="object-contain p-2 rounded-lg"
                   />
                 </div>
               </div>
