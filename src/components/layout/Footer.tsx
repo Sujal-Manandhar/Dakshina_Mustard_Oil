@@ -200,7 +200,17 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>{t.contact.info.phonePlaceholder}</span>
+                <div className="space-y-0.5">
+                  <p className="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">
+                    {locale === 'ne' ? 'थोक तथा डिलर अर्डर डेस्क' : 'Wholesale & Dealership Desk'}
+                  </p>
+                  <p className="font-bold text-white">
+                    <a href="tel:9845025862" className="hover:text-amber-400">9845025862</a> / <a href="tel:9814277220" className="hover:text-amber-400">9814277220</a>
+                  </p>
+                  <p className="text-xs text-amber-200/80">
+                    <a href="tel:057520589" className="hover:text-amber-400">057-520589</a> (ल्यान्डलाइन / Landline)
+                  </p>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />

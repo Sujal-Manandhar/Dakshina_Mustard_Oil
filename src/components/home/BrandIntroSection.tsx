@@ -14,30 +14,71 @@ export default function BrandIntroSection() {
       <div className="container-custom mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Packaging Illustration (5 Cols) */}
+          {/* Packaging Illustration (5 Cols) with Dual Pouch Showcase */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 text-center">
-              <span className="inline-block px-3 py-1 rounded bg-slate-900 text-amber-400 text-xs font-bold uppercase tracking-wider mb-6">
-                {locale === 'ne' ? 'हेटौंडा मिल उत्पादन' : 'Hetauda Mill Production'}
-              </span>
-
-              <div className="relative w-52 h-76 sm:w-60 sm:h-88 mx-auto my-2">
-                <Image
-                  src="/images/products/roasted-1l.png"
-                  alt={locale === 'ne' ? 'दक्षिणा तोरीको तेल' : 'Dakshina Mustard Oil Pouch'}
-                  fill
-                  className="object-contain drop-shadow-sm rounded-lg"
-                />
+            <div className="bg-[#FFFBF0] border-2 border-amber-500/30 rounded-2xl p-6 sm:p-8 text-center shadow-lg">
+              
+              <div className="flex items-center justify-between pb-3 mb-5 border-b border-amber-500/20 text-xs">
+                <span className="inline-block px-3 py-1 rounded bg-[#241A0B] text-amber-400 font-extrabold uppercase tracking-wider">
+                  {locale === 'ne' ? 'हेटौंडा मिल उत्पादन' : 'Hetauda Mill Production'}
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
+                  {locale === 'ne' ? '५०० मि.लि. र १ लिटर' : '500ml & 1L Packs'}
+                </span>
               </div>
 
-              <div className="pt-4 border-t border-slate-200 mt-4 text-left">
-                <p className="text-xs font-bold text-slate-900">
+              {/* Side-by-Side Dual Pouch Display (Roasted & Cold-Pressed) */}
+              <div className="grid grid-cols-2 gap-3 items-end my-4">
+                
+                {/* 1L Roasted Pouch */}
+                <div className="flex flex-col items-center">
+                  <div className="relative w-full h-64 sm:h-76 transition-transform duration-300 hover:scale-105">
+                    <Image
+                      src="/images/products/roasted-1l.png"
+                      alt={locale === 'ne' ? 'दक्षिणा भुटेको तोरीको तेल १ लिटर' : 'Dakshina Roasted Mustard Oil 1L'}
+                      fill
+                      className="object-contain drop-shadow-md"
+                    />
+                  </div>
+                  <div className="mt-2 px-2.5 py-1 rounded-md bg-white border border-red-200 text-center w-full">
+                    <span className="block text-xs font-extrabold text-red-700">
+                      {locale === 'ne' ? 'भुटेको चेपुवा' : 'Roasted Chepuwa'}
+                    </span>
+                    <span className="text-[11px] text-[#6B5E4A] font-semibold">1000 ml</span>
+                  </div>
+                </div>
+
+                {/* 500ml Cold-Pressed Pouch */}
+                <div className="flex flex-col items-center">
+                  <div className="relative w-full h-56 sm:h-64 transition-transform duration-300 hover:scale-105">
+                    <Image
+                      src="/images/products/coldpress-500ml.png"
+                      alt={locale === 'ne' ? 'दक्षिणा कच्ची घानी ५०० मि.लि.' : 'Dakshina Cold Pressed 500ml'}
+                      fill
+                      className="object-contain drop-shadow-md"
+                    />
+                  </div>
+                  <div className="mt-2 px-2.5 py-1 rounded-md bg-white border border-emerald-200 text-center w-full">
+                    <span className="block text-xs font-extrabold text-emerald-700">
+                      {locale === 'ne' ? 'कच्ची घानी' : 'Cold Pressed'}
+                    </span>
+                    <span className="text-[11px] text-[#6B5E4A] font-semibold">500 ml</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div className="pt-4 border-t border-amber-500/20 mt-4 text-left bg-white p-3.5 rounded-xl border border-amber-500/20">
+                <p className="text-xs font-bold text-[#241A0B]">
                   {locale === 'ne' ? 'स्वादिलो र सुगन्धित घरेलु मिलबाट उत्पादित' : 'Tasty & Fragrant, Produced from Household Mill'}
                 </p>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  {locale === 'ne' ? '५०० मि.लि. र १००० मि.लि. पाउच प्याकिङ' : '500ml & 1000ml sealed pouch formats'}
+                <p className="text-xs text-[#6B5E4A] mt-0.5">
+                  {locale === 'ne' 
+                    ? '५०० मि.लि. र १००० मि.लि. खाद्य-ग्रेड सिल पाउच तथा थोक कार्टुन प्याकिङ' 
+                    : '500ml & 1000ml sealed food-grade pouch formats & bulk cartons'}
                 </p>
               </div>
+
             </div>
           </div>
 

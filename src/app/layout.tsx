@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     'दक्षिणा तेल मिल'
   ],
   authors: [{ name: 'Dakshina Tel Mill' }],
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/products/roasted-1l.png', sizes: '192x192', type: 'image/png' }
+    ],
+    shortcut: '/favicon.png',
+    apple: '/images/products/roasted-1l.png',
+  },
   openGraph: {
     title: 'Dakshina Mustard Oil | दक्षिणा तोरीको तेल',
     description: 'Tasty & fragrant roasted mustard oil produced by Dakshina Tel Mill in Hetauda, Nepal.',
@@ -26,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Dakshina Mustard Oil',
     images: [
       {
-        url: '/images/products/dakshina-1l.png',
+        url: '/images/products/roasted-1l.png',
         width: 600,
         height: 900,
         alt: 'Dakshina Roasted Mustard Oil 1L Pouch',

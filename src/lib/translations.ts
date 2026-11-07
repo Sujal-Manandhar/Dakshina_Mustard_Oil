@@ -144,6 +144,7 @@ export interface Translations {
       addressValue: string;
       phone: string;
       phonePlaceholder: string;
+      deskLabel?: string;
       email: string;
       emailPlaceholder: string;
       hours: string;
@@ -241,10 +242,10 @@ const en: Translations = {
     dualProcessDesc: 'Equipped to process both roasted and unheated virgin mustard seeds under strict hygienic conditions.',
   },
   brandStory: {
-    badge: 'The Mill Story',
-    title: 'Preserving Tradition, Serving Nepal',
-    subtitle: 'Honoring Authentic Flavors in Every Kitchen',
-    description: 'Dakshina Mustard Oil started with a clear purpose: to bridge the gap between historic household oil mills and modern food safety standards. We honor Nepal\'s love for aromatic mustard oil while supplying reliable, beautifully packed mustard oil to homes, hotels, and retail stores.',
+    badge: 'Three Generations of Heritage',
+    title: 'The Legacy of Dakshina Mustard Oil',
+    subtitle: 'Three Generations. One Tradition. A Legacy That Continues.',
+    description: 'Established in 1990 in Hetauda, Makwanpur, Dakshina Mustard Oil began with the vision of grandfather Dhan Manandhar, continued by Rajesh Manandhar, and carried forward today by Sujal Manandhar. Preserving the traditional Newari-style firewood roasting and wooden expeller extraction methods to deliver authentic mustard oil to households across Nepal.',
   },
   contactSection: {
     badge: 'Partner With Dakshina',
@@ -254,11 +255,11 @@ const en: Translations = {
     getInTouch: 'Send Business Enquiry',
   },
   about: {
-    pageTitle: 'About Dakshina Tel Mill',
-    pageDescription: 'Manufacturing pure roasted and cold-pressed mustard oil in Hetauda, Nepal. Dedicated to authentic taste, dual processing expertise, and consistent quality.',
+    pageTitle: 'About Us – The Legacy of Dakshina Mustard Oil',
+    pageDescription: 'Three Generations. One Tradition. A Legacy That Continues. Established in 1990 in Hetauda, Makwanpur by Dhan Manandhar, continued by Rajesh Manandhar, and preserved today by Sujal Manandhar.',
     intro: {
-      title: 'Hetauda’s Dedicated Mustard Oil Mill',
-      description: 'Dakshina Tel Mill is an edible oil manufacturer located in Hetauda, Nepal. We craft two distinct product lines — Roasted Mustard Oil (भुटेको तोरीको तेल / चेपुवा) and Cold-Pressed Mustard Oil (कच्ची घानी) — offering both 500 ml and 1000 ml pouches. Our dedication lies in providing pure, unadulterated oil that enriches Nepali meals.',
+      title: 'Three Generations. One Tradition. A Legacy That Continues.',
+      description: 'Some traditions are more than just a way of doing things; they are a part of who we are. At Dakshina Mustard Oil, our story is built on family heritage, traditional craftsmanship, and a passion for preserving the authentic taste of Nepalese mustard oil.',
     },
     mission: {
       title: 'Our Mission',
@@ -368,8 +369,9 @@ const en: Translations = {
       title: 'Mill & Office Details',
       address: 'Mill Location',
       addressValue: 'Hetauda, Makwanpur, Bagmati Province, Nepal',
-      phone: 'Direct Mill Line',
-      phonePlaceholder: '+977 [Phone number to be provided]',
+      phone: 'Contact Numbers',
+      phonePlaceholder: '9845025862 / 9814277220 / 057-520589',
+      deskLabel: 'Wholesale & Dealership Order Desk',
       email: 'Official Inquiries',
       emailPlaceholder: 'info@dakshinamustardoil.com',
       hours: 'Mill Operating Hours',
@@ -480,11 +482,11 @@ const ne: Translations = {
     getInTouch: 'व्यापारिक सोधपुछ पठाउनुहोस्',
   },
   about: {
-    pageTitle: 'हाम्रो बारेमा — दक्षिणा तेल मिल',
-    pageDescription: 'हेटौंडा, नेपालमा भुटेको चेपुवा र कच्ची घानी कोल्ड प्रेस्ड तोरीको तेल उत्पादन गर्ने समर्पित मिल।',
+    pageTitle: 'हाम्रो बारेमा — दक्षिणा तोरीको तेलको गौरवमय विरासत',
+    pageDescription: 'तीन पुस्ता, एउटै परम्परा, निरन्तर विरासत। सन् १९९० मा हेटौंडा, मकवानपुरमा हजुरबुबा धन मानन्धरद्वारा स्थापित, राजेश मानन्धरद्वारा विस्तारित र सुजल मानन्धरद्वारा संरक्षित।',
     intro: {
-      title: 'हेटौंडाको आफ्नै तोरीको तेल मिल',
-      description: 'दक्षिणा तेल मिल हेटौंडा, नेपालमा सञ्चालित तोरीको तेल उत्पादन उद्योग हो। हामी भुटेको तोरीको तेल (चेपुवा) र कच्ची घानी (कोल्ड प्रेस्ड) दुवै प्रकारका तोरीको तेल ५०० मि.लि. र १ लिटर पाउचमा उत्पादन गर्दछौं। नेपाली खानालाई स्वादिष्ट र स्वास्थ्यवर्धक बनाउनु हाम्रो मुख्य उद्देश्य हो।',
+      title: 'तीन पुस्ता। एउटै परम्परा। निरन्तर विरासत।',
+      description: 'केही परम्पराहरू केवल काम गर्ने तरिका मात्र होइनन्; ती हाम्रो अस्तित्वको अभिन्न अङ्ग हुन्। दक्षिणा तोरीको तेलमा हाम्रो कथा पारिवारिक विरासत, परम्परागत सीप र नेपाली तोरीको तेलको मौलिक स्वाद जोगाउने अटल समर्पणमा आधारित छ।',
     },
     mission: {
       title: 'हाम्रो लक्ष्य',
@@ -594,8 +596,9 @@ const ne: Translations = {
       title: 'मिल तथा सम्पर्क विवरण',
       address: 'मिलको ठेगाना',
       addressValue: 'हेटौंडा, मकवानपुर, बागमती प्रदेश, नेपाल',
-      phone: 'प्रत्यक्ष सम्पर्क',
-      phonePlaceholder: '+९७७ [फोन नम्बर उपलब्ध हुनेछ]',
+      phone: 'सम्पर्क नम्बरहरू',
+      phonePlaceholder: '९८४५०२५८६२ / ९८१४२७७२२० / ०५७-५२०५८९',
+      deskLabel: 'थोक तथा डिलर अर्डर डेस्क',
       email: 'आधिकारिक इमेल',
       emailPlaceholder: 'info@dakshinamustardoil.com',
       hours: 'कार्यालय समय',
