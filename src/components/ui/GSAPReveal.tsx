@@ -45,29 +45,33 @@ export default function GSAPReveal({
     if (direction === 'zoom') scaleVal = 0.92;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        {
-          opacity: 0,
-          x: xVal,
-          y: yVal,
-          scale: scaleVal,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          y: 0,
-          scale: 1,
-          duration,
-          delay,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 88%',
-            toggleActions: 'play none none reverse',
+      // Use requestAnimationFrame to prevent synchronous layout thrashing / forced reflow
+      requestAnimationFrame(() => {
+        gsap.fromTo(
+          el,
+          {
+            opacity: 0,
+            x: xVal,
+            y: yVal,
+            scale: scaleVal,
           },
-        }
-      );
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration,
+            delay,
+            ease: 'power3.out',
+            force3D: true,
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 88%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      });
     }, el);
 
     return () => ctx.revert();

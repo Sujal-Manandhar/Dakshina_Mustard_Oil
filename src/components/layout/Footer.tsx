@@ -136,9 +136,9 @@ export default function Footer() {
 
           {/* Navigation Links (2 Cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-5 pb-2 border-b border-amber-500/20">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-5 pb-2 border-b border-amber-500/20">
               {t.footer.quickLinks}
-            </h4>
+            </h3>
             <ul className="space-y-3 text-sm">
               {[
                 { href: '/', label: t.nav.home },
@@ -161,9 +161,9 @@ export default function Footer() {
 
           {/* Product SKUs (2 Cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-5 pb-2 border-b border-amber-500/20">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-5 pb-2 border-b border-amber-500/20">
               {t.footer.ourProducts}
-            </h4>
+            </h3>
             <ul className="space-y-3 text-sm text-amber-100/80">
               <li>
                 <Link href="/products" className="hover:text-amber-400 transition-colors block">
@@ -190,9 +190,9 @@ export default function Footer() {
 
           {/* Mill Contact Info (3 Cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-5 pb-2 border-b border-amber-500/20">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-5 pb-2 border-b border-amber-500/20">
               {t.footer.contactInfo}
-            </h4>
+            </h3>
             <ul className="space-y-4 text-xs sm:text-sm text-amber-100/90">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />

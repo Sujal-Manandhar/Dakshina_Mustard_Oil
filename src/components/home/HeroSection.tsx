@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import gsap from 'gsap';
 import { useLanguage } from '@/context/LanguageContext';
 import { generateWhatsAppLink } from '@/lib/whatsapp';
 import { 
@@ -113,10 +114,72 @@ export default function HeroSection() {
   const [selectedSize, setSelectedSize] = useState<'500ml' | '1000ml'>('1000ml');
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const heroContentRef = useRef<HTMLDivElement>(null);
+  const pouchCardRef = useRef<HTMLDivElement>(null);
+  const pouchFloatingRef = useRef<HTMLDivElement>(null);
+
   // Active matching variant
   const activeVariant = variants.find(
     (v) => v.type === selectedType && v.size === selectedSize
   ) || variants[0];
+
+  // GSAP Entrance and Floating Animations
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const ctx = gsap.context(() => {
+      // Defer to next frame so styles finish computing, preventing forced reflow
+      requestAnimationFrame(() => {
+        // Stagger in left hero elements
+        if (heroContentRef.current) {
+          gsap.fromTo(
+            heroContentRef.current.children,
+            { opacity: 0, y: 28 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              stagger: 0.12,
+              ease: 'power3.out',
+              force3D: true,
+            }
+          );
+        }
+
+        // Smooth entrance for the interactive pouch card
+        if (pouchCardRef.current) {
+          gsap.fromTo(
+            pouchCardRef.current,
+            { opacity: 0, y: 35, scale: 0.96 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.9,
+              delay: 0.2,
+              ease: 'power3.out',
+              force3D: true,
+            }
+          );
+        }
+
+        // Gentle continuous floating breathing animation for pouch
+        if (pouchFloatingRef.current) {
+          gsap.to(pouchFloatingRef.current, {
+            y: -8,
+            duration: 2.8,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            force3D: true,
+          });
+        }
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   // Trigger smooth pouch pop animation on change
   const handleTypeSelect = (type: 'roasted' | 'cold-pressed') => {
@@ -149,7 +212,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Hero Content (7 Cols) */}
-          <div className="lg:col-span-7 text-left">
+          <div ref={heroContentRef} className="lg:col-span-7 text-left">
             
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-amber-500/40 text-[#241A0B] text-xs font-bold uppercase tracking-wider mb-5 shadow-sm">
@@ -240,7 +303,7 @@ export default function HeroSection() {
 
           {/* Right Hero Interactive Pouch Showcase with Live Transition (5 Cols) */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className={`w-full max-w-md bg-white border-2 rounded-2xl p-6 sm:p-7 shadow-xl text-center relative transition-all duration-300 ${activeVariant.borderColor}`}>
+            <div ref={pouchCardRef} className={`w-full max-w-md bg-white border-2 rounded-2xl p-6 sm:p-7 shadow-xl text-center relative transition-all duration-300 ${activeVariant.borderColor}`}>
               
               {/* Type Switcher Segment (Roasted vs Cold-Pressed) */}
               <div className="flex items-center justify-center p-1 rounded-xl bg-[#FFF8E7] border border-amber-500/30 mb-4 gap-1">
@@ -299,7 +362,7 @@ export default function HeroSection() {
               </div>
 
               {/* Pouch Display Area with Smooth Scale/Fade Animation */}
-              <div className="relative w-64 h-80 sm:w-72 sm:h-96 mx-auto my-3 flex items-center justify-center">
+              <div ref={pouchFloatingRef} className="relative w-64 h-80 sm:w-72 sm:h-96 mx-auto my-3 flex items-center justify-center">
                 <div 
                   className={`relative w-full h-full transition-all duration-300 transform ${
                     isAnimating ? 'opacity-40 scale-95' : 'opacity-100 scale-100'

@@ -4,20 +4,21 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { ArrowRight, Flame, Sparkles, Building2, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Flame, Sparkles, Building2 } from 'lucide-react';
+import GSAPReveal from '@/components/ui/GSAPReveal';
 
 export default function BrandIntroSection() {
   const { locale, t } = useLanguage();
 
   return (
-    <section className="section-padding bg-white border-b border-slate-200" id="brand-intro">
+    <section className="section-padding bg-white border-b border-amber-500/15" id="brand-intro">
       <div className="container-custom mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Packaging Illustration (5 Cols) with Dual Pouch Showcase */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <GSAPReveal direction="left" className="lg:col-span-5 order-2 lg:order-1">
             <div className="bg-[#FFFBF0] border-2 border-amber-500/30 rounded-2xl p-6 sm:p-8 text-center shadow-lg">
-              
+
               <div className="flex items-center justify-between pb-3 mb-5 border-b border-amber-500/20 text-xs">
                 <span className="inline-block px-3 py-1 rounded bg-[#241A0B] text-amber-400 font-extrabold uppercase tracking-wider">
                   {locale === 'ne' ? 'हेटौंडा मिल उत्पादन' : 'Hetauda Mill Production'}
@@ -29,7 +30,7 @@ export default function BrandIntroSection() {
 
               {/* Side-by-Side Dual Pouch Display (Roasted & Cold-Pressed) */}
               <div className="grid grid-cols-2 gap-3 items-end my-4">
-                
+
                 {/* 1L Roasted Pouch */}
                 <div className="flex flex-col items-center">
                   <div className="relative w-full h-64 sm:h-76 transition-transform duration-300 hover:scale-105">
@@ -73,24 +74,24 @@ export default function BrandIntroSection() {
                   {locale === 'ne' ? 'स्वादिलो र सुगन्धित घरेलु मिलबाट उत्पादित' : 'Tasty & Fragrant, Produced from Household Mill'}
                 </p>
                 <p className="text-xs text-[#6B5E4A] mt-0.5">
-                  {locale === 'ne' 
-                    ? '५०० मि.लि. र १००० मि.लि. खाद्य-ग्रेड सिल पाउच तथा थोक कार्टुन प्याकिङ' 
+                  {locale === 'ne'
+                    ? '५०० मि.लि. र १००० मि.लि. खाद्य-ग्रेड सिल पाउच तथा थोक कार्टुन प्याकिङ'
                     : '500ml & 1000ml sealed food-grade pouch formats & bulk cartons'}
                 </p>
               </div>
 
             </div>
-          </div>
+          </GSAPReveal>
 
           {/* Narrative Content (7 Cols) */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
-            
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4">
+          <GSAPReveal direction="right" className="lg:col-span-7 order-1 lg:order-2">
+
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-500/10 text-[#241A0B] text-xs font-bold uppercase tracking-wider mb-4">
               <Building2 className="w-3.5 h-3.5 text-amber-600" />
               <span>{t.brandIntro.badge}</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#241A0B] tracking-tight leading-tight mb-3">
               {t.brandIntro.title}
             </h2>
 
@@ -100,33 +101,33 @@ export default function BrandIntroSection() {
 
             <div className="w-16 h-1 bg-amber-500 mb-6 rounded-full" />
 
-            <p className="text-base text-slate-600 leading-relaxed mb-8 font-normal">
+            <p className="text-base text-[#6B5E4A] leading-relaxed mb-8 font-normal">
               {t.brandIntro.description}
             </p>
 
             {/* Dual Processing Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              
-              <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
+
+              <div className="p-5 rounded-xl bg-[#FFFBF0] border border-amber-500/20">
                 <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center mb-3 text-red-700">
                   <Flame className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-base mb-1">
+                <h4 className="font-bold text-[#241A0B] text-base mb-1">
                   {t.brandIntro.roastedTitle}
                 </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-[#6B5E4A] leading-relaxed">
                   {t.brandIntro.roastedDesc}
                 </p>
               </div>
 
-              <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
+              <div className="p-5 rounded-xl bg-[#FFFBF0] border border-amber-500/20">
                 <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center mb-3 text-emerald-700">
                   <Sparkles className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-base mb-1">
+                <h4 className="font-bold text-[#241A0B] text-base mb-1">
                   {t.brandIntro.coldPressedTitle}
                 </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-[#6B5E4A] leading-relaxed">
                   {t.brandIntro.coldPressedDesc}
                 </p>
               </div>
@@ -138,7 +139,7 @@ export default function BrandIntroSection() {
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-          </div>
+          </GSAPReveal>
 
         </div>
       </div>

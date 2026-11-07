@@ -4,9 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import GSAPReveal from '@/components/ui/GSAPReveal';
+import { useGsapStagger } from '@/hooks/useGsapStagger';
 import { 
   ShieldCheck, 
-  Compass, 
+  Target, 
   Factory, 
   Fire, 
   Sparkle, 
@@ -20,8 +24,25 @@ import {
   Scales 
 } from '@phosphor-icons/react';
 
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default function AboutPage() {
   const { locale, t } = useLanguage();
+  const missionVisionRef = useGsapStagger<HTMLDivElement>({
+    stagger: 0.2,
+    fromY: 36,
+    fromScale: 0.97,
+    duration: 0.9,
+    start: 'top 85%',
+  });
+  const capabilitiesRef = useGsapStagger<HTMLDivElement>({
+    stagger: 0.14,
+    fromY: 32,
+    duration: 0.8,
+    start: 'top 85%',
+  });
 
   const manufacturingCapacities = [
     {
@@ -306,7 +327,7 @@ export default function AboutPage() {
           </div>
 
           {/* Clean 2-Column Corporate Grid with Balanced Proportions */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div ref={missionVisionRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             
             {/* Mission Box */}
             <div className="bg-white rounded-2xl border border-amber-500/25 p-7 sm:p-9 shadow-sm hover:border-amber-500/50 transition-all flex flex-col justify-between">
@@ -373,7 +394,7 @@ export default function AboutPage() {
               <div>
                 <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-amber-500/15">
                   <div className="w-12 h-12 rounded-xl bg-[#241A0B] border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-sm">
-                    <Compass size={26} weight="duotone" />
+                    <Target size={26} weight="duotone" />
                   </div>
                   <div>
                     <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-800 block">
@@ -452,7 +473,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div ref={capabilitiesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {manufacturingCapacities.map((item, idx) => {
               const Icon = item.icon;
               return (

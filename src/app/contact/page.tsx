@@ -16,7 +16,8 @@ import {
   ShieldCheck,
   Flame,
   Sparkles,
-  MessageCircle
+  MessageCircle,
+  ChevronDown
 } from 'lucide-react';
 
 export default function ContactPage() {
@@ -139,7 +140,7 @@ export default function ContactPage() {
                 <h2 className="text-xl sm:text-2xl font-bold text-[#241A0B] mb-2 tracking-tight">
                   {t.contact.info.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-[#6B5E4A] mb-6">
+                <p className="text-xs sm:text-sm text-[#3A2A0A] mb-6">
                   {locale === 'ne' 
                     ? 'हाम्रो हेटौंडास्थित मिल तथा बिक्री विभागसँग सिधै सम्पर्क गर्नुहोस्।' 
                     : 'Connect directly with our mill facility and sales operations in Hetauda.'}
@@ -178,7 +179,7 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold text-[#6B5E4A] uppercase tracking-wider">
+                      <p className="text-[11px] font-bold text-[#3A2A0A] uppercase tracking-wider">
                         {t.contact.info.address}
                       </p>
                       <p className="text-sm font-bold text-[#241A0B] mt-0.5">
@@ -194,7 +195,7 @@ export default function ContactPage() {
                     </div>
                     <div className="space-y-1.5 flex-1">
                       <div className="flex items-center justify-between">
-                        <p className="text-[11px] font-bold text-[#6B5E4A] uppercase tracking-wider">
+                        <p className="text-[11px] font-bold text-[#3A2A0A] uppercase tracking-wider">
                           {t.contact.info.phone}
                         </p>
                         <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-amber-500/20 text-amber-900 border border-amber-500/30">
@@ -208,15 +209,15 @@ export default function ContactPage() {
                           className="flex items-center justify-between text-sm font-extrabold text-[#241A0B] hover:text-amber-700 transition-colors"
                         >
                           <span>9845025862</span>
-                          <span className="text-[11px] font-semibold text-[#6B5E4A]">{locale === 'ne' ? '(मोबाइल)' : '(Mobile)'}</span>
+                          <span className="text-[11px] font-semibold text-[#3A2A0A]">{locale === 'ne' ? '(मोबाइल)' : '(Mobile)'}</span>
                         </a>
 
                         <a 
                           href="tel:9814277220" 
                           className="flex items-center justify-between text-sm font-extrabold text-[#241A0B] hover:text-amber-700 transition-colors"
                         >
-                          <span className="text-emerald-700">9814277220</span>
-                          <span className="text-[11px] font-semibold text-emerald-700">{locale === 'ne' ? '(WhatsApp / मोबाइल)' : '(WhatsApp / Mobile)'}</span>
+                          <span className="text-emerald-800">9814277220</span>
+                          <span className="text-[11px] font-semibold text-emerald-800">{locale === 'ne' ? '(WhatsApp / मोबाइल)' : '(WhatsApp / Mobile)'}</span>
                         </a>
 
                         <a 
@@ -224,11 +225,11 @@ export default function ContactPage() {
                           className="flex items-center justify-between text-sm font-extrabold text-[#241A0B] hover:text-amber-700 transition-colors"
                         >
                           <span>057-520589</span>
-                          <span className="text-[11px] font-semibold text-[#6B5E4A]">{locale === 'ne' ? '(ल्यान्डलाइन)' : '(Landline)'}</span>
+                          <span className="text-[11px] font-semibold text-[#3A2A0A]">{locale === 'ne' ? '(ल्यान्डलाइन)' : '(Landline)'}</span>
                         </a>
                       </div>
 
-                      <p className="text-[11px] font-bold text-amber-800 pt-1 border-t border-amber-500/20">
+                      <p className="text-[11px] font-bold text-amber-900 pt-1 border-t border-amber-500/20">
                         {locale === 'ne' ? 'थोक तथा डिलरसिप अर्डर डेस्क' : 'Wholesale & Dealership Order Desk'}
                       </p>
                     </div>
@@ -240,7 +241,7 @@ export default function ContactPage() {
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold text-[#6B5E4A] uppercase tracking-wider">
+                      <p className="text-[11px] font-bold text-[#3A2A0A] uppercase tracking-wider">
                         {t.contact.info.email}
                       </p>
                       <p className="text-sm font-bold text-[#241A0B] mt-0.5">
@@ -255,7 +256,7 @@ export default function ContactPage() {
                       <Clock className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold text-[#6B5E4A] uppercase tracking-wider">
+                      <p className="text-[11px] font-bold text-[#3A2A0A] uppercase tracking-wider">
                         {t.contact.info.hours}
                       </p>
                       <p className="text-sm font-bold text-[#241A0B] mt-0.5">
@@ -378,18 +379,21 @@ export default function ContactPage() {
                       <label htmlFor="inquiryType" className="block text-xs font-bold uppercase tracking-wider text-[#241A0B] mb-1.5">
                         {t.contact.form.inquiryType}
                       </label>
-                      <select
-                        id="inquiryType"
-                        value={formData.inquiryType}
-                        onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none text-sm text-[#241A0B] transition-all"
-                      >
-                        <option value="wholesale">{t.contact.form.inquiryTypes.wholesale}</option>
-                        <option value="retailer">{t.contact.form.inquiryTypes.retailer}</option>
-                        <option value="distributor">{t.contact.form.inquiryTypes.distributor}</option>
-                        <option value="product">{t.contact.form.inquiryTypes.product}</option>
-                        <option value="general">{t.contact.form.inquiryTypes.general}</option>
-                      </select>
+                      <div className="relative">
+                        <select
+                          id="inquiryType"
+                          value={formData.inquiryType}
+                          onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
+                          className="w-full px-3.5 py-2.5 pr-10 rounded-lg bg-white border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none text-sm text-[#241A0B] transition-all appearance-none cursor-pointer"
+                        >
+                          <option value="wholesale">{t.contact.form.inquiryTypes.wholesale}</option>
+                          <option value="retailer">{t.contact.form.inquiryTypes.retailer}</option>
+                          <option value="distributor">{t.contact.form.inquiryTypes.distributor}</option>
+                          <option value="product">{t.contact.form.inquiryTypes.product}</option>
+                          <option value="general">{t.contact.form.inquiryTypes.general}</option>
+                        </select>
+                        <ChevronDown className="w-4 h-4 text-amber-700 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      </div>
                     </div>
                   </div>
 
@@ -398,28 +402,31 @@ export default function ContactPage() {
                     <label htmlFor="productInterest" className="block text-xs font-bold uppercase tracking-wider text-[#241A0B] mb-1.5">
                       {locale === 'ne' ? 'उत्पादन तथा साइज रोज्नुहोस्' : 'Select Product & Size Format'} <span className="text-red-600">*</span>
                     </label>
-                    <select
-                      id="productInterest"
-                      value={formData.productInterest}
-                      onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none text-sm text-[#241A0B] transition-all font-medium"
-                    >
-                      <option value="both-500-1000">
-                        {locale === 'ne' ? 'भुटेको + कच्ची घानी दुवै (५०० मि.लि. र १ लिटर)' : 'Both Roasted & Cold-Pressed (500ml & 1L)'}
-                      </option>
-                      <option value="roasted-1000">
-                        {locale === 'ne' ? '🔥 भुटेको तोरीको तेल (चेपुवा) — १ लिटर (१००० मि.लि.) पाउच' : '🔥 Roasted Mustard Oil (Chepuwa) — 1 Litre (1000 ml)'}
-                      </option>
-                      <option value="roasted-500">
-                        {locale === 'ne' ? '🔥 भुटेको तोरीको तेल (चेपुवा) — ५०० मि.लि. पाउच' : '🔥 Roasted Mustard Oil (Chepuwa) — 500 ml Pouch'}
-                      </option>
-                      <option value="coldpress-1000">
-                        {locale === 'ne' ? '🌿 कच्ची घानी तोरीको तेल (कोल्ड प्रेस्ड) — १ लिटर (१००० मि.लि.) पाउच' : '🌿 Cold-Pressed Mustard Oil (Kacchi Ghani) — 1 Litre (1000 ml)'}
-                      </option>
-                      <option value="coldpress-500">
-                        {locale === 'ne' ? '🌿 कच्ची घानी तोरीको तेल (कोल्ड प्रेस्ड) — ५०० मि.लि. पाउच' : '🌿 Cold-Pressed Mustard Oil (Kacchi Ghani) — 500 ml Pouch'}
-                      </option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        id="productInterest"
+                        value={formData.productInterest}
+                        onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
+                        className="w-full px-3.5 py-2.5 pr-10 rounded-lg bg-white border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none text-sm text-[#241A0B] transition-all font-medium appearance-none cursor-pointer"
+                      >
+                        <option value="both-500-1000">
+                          {locale === 'ne' ? 'भुटेको + कच्ची घानी दुवै (५०० मि.लि. र १ लिटर)' : 'Both Roasted & Cold-Pressed (500ml & 1L)'}
+                        </option>
+                        <option value="roasted-1000">
+                          {locale === 'ne' ? '🔥 भुटेको तोरीको तेल (चेपुवा) — १ लिटर (१००० मि.लि.) पाउच' : '🔥 Roasted Mustard Oil (Chepuwa) — 1 Litre (1000 ml)'}
+                        </option>
+                        <option value="roasted-500">
+                          {locale === 'ne' ? '🔥 भुटेको तोरीको तेल (चेपुवा) — ५०० मि.लि. पाउच' : '🔥 Roasted Mustard Oil (Chepuwa) — 500 ml Pouch'}
+                        </option>
+                        <option value="coldpress-1000">
+                          {locale === 'ne' ? '🌿 कच्ची घानी तोरीको तेल (कोल्ड प्रेस्ड) — १ लिटर (१००० मि.लि.) पाउच' : '🌿 Cold-Pressed Mustard Oil (Kacchi Ghani) — 1 Litre (1000 ml)'}
+                        </option>
+                        <option value="coldpress-500">
+                          {locale === 'ne' ? '🌿 कच्ची घानी तोरीको तेल (कोल्ड प्रेस्ड) — ५०० मि.लि. पाउच' : '🌿 Cold-Pressed Mustard Oil (Kacchi Ghani) — 500 ml Pouch'}
+                        </option>
+                      </select>
+                      <ChevronDown className="w-4 h-4 text-amber-700 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    </div>
                   </div>
 
                   <div>

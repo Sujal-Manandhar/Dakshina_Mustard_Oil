@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Dakshina Tel Mill' }],
   icons: {
     icon: [
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/products/roasted-1l.png', sizes: '192x192', type: 'image/png' }
+      { url: '/favicon.png', sizes: '64x64', type: 'image/png' },
+      { url: '/icon.png', sizes: '64x64', type: 'image/png' }
     ],
     shortcut: '/favicon.png',
-    apple: '/images/products/roasted-1l.png',
+    apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'Dakshina Mustard Oil | दक्षिणा तोरीको तेल',
