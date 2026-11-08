@@ -31,7 +31,35 @@
     font-family: 'Plus Jakarta Sans', 'Mukta', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
+  }
+
+  /* Specific typography scaling & clarity for Nepali (Devanagari) on iPhone and Mobile */
+  html[lang="ne"] body {
+    font-family: 'Mukta', 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem; /* ~17px baseline for crystal clear legibility on Retina & OLED screens */
+    line-height: 1.7; /* Ample line height for vowel signs (matras: ि, ी, ु, ू, ृ) */
+  }
+
+  html[lang="ne"] h1 {
+    line-height: 1.25;
+  }
+
+  html[lang="ne"] h2,
+  html[lang="ne"] h3,
+  html[lang="ne"] h4 {
+    line-height: 1.35;
+  }
+
+  html[lang="ne"] p,
+  html[lang="ne"] span,
+  html[lang="ne"] a,
+  html[lang="ne"] button,
+  html[lang="ne"] input,
+  html[lang="ne"] select,
+  html[lang="ne"] textarea {
+    letter-spacing: 0.01em; /* Prevent congested conjunct characters (युक्ताक्षर) */
   }
 
   h1, h2, h3, h4, h5, h6 {

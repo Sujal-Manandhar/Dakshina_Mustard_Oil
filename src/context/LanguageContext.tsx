@@ -21,6 +21,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       const saved = localStorage.getItem('dakshina_locale') as Locale | null;
       if (saved === 'en' || saved === 'ne') {
         setLocaleState(saved);
+        document.documentElement.lang = saved;
       }
     }
   }, []);
@@ -29,6 +30,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLocaleState(newLocale);
     if (typeof window !== 'undefined') {
       localStorage.setItem('dakshina_locale', newLocale);
+      document.documentElement.lang = newLocale;
     }
   }, []);
 
@@ -37,6 +39,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       const next = prev === 'en' ? 'ne' : 'en';
       if (typeof window !== 'undefined') {
         localStorage.setItem('dakshina_locale', next);
+        document.documentElement.lang = next;
       }
       return next;
     });
