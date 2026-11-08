@@ -90,10 +90,7 @@ export default function AboutPage() {
       <section className="bg-dakshina-brown text-white border-b border-dakshina-gold/30 py-16 sm:py-20 relative overflow-hidden">
         <div className="container-custom mx-auto relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-dakshina-gold/40 text-dakshina-gold text-xs font-bold uppercase tracking-wider mb-4">
-              <Factory size={16} weight="duotone" />
-              <span>Dakshina Tel Mill • Hetauda, Makwanpur, Nepal</span>
-            </div>
+
             
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-5">
               {locale === 'ne' ? 'हाम्रो बारेमा — तीन पुस्ताको गौरवमय विरासत' : 'About Us – The Legacy of Dakshina Mustard Oil'}

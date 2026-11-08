@@ -110,10 +110,7 @@ export default function ContactPage() {
       <section className="bg-[#241A0B] text-white border-b border-amber-500/30 py-16 sm:py-20 relative">
         <div className="container-custom mx-auto">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-              <Building2 className="w-4 h-4" />
-              <span>{locale === 'ne' ? 'व्यापारिक तथा सामान्य सोधपुछ' : 'Trade & General Inquiries'}</span>
-            </div>
+        
 
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-5">
               {t.contact.pageTitle}
@@ -269,22 +266,7 @@ export default function ContactPage() {
 
               </div>
 
-              {/* Purity Guarantee Box */}
-              <div className="bg-[#241A0B] text-white rounded-xl p-5 border border-amber-500/30 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center shrink-0 text-amber-400">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                    {locale === 'ne' ? 'प्रमाणित १००% शुद्ध तोरीको तेल' : '100% Certified Pure Mustard Oil'}
-                  </p>
-                  <p className="text-xs text-amber-100/80 mt-0.5">
-                    {locale === 'ne' 
-                      ? 'कुनै मिसावट छैन, ५०० मि.लि. र १ लिटर पाउचमा सुरक्षित प्याकिङ।' 
-                      : 'Zero adulteration, hygienic food-grade pouches in 500ml & 1L formats.'}
-                  </p>
-                </div>
-              </div>
+  
 
             </div>
 

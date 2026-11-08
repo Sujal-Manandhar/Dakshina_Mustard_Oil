@@ -26,6 +26,7 @@ export interface Translations {
     title: string;
     subtitle: string;
     description: string;
+    tagline?: string;
     learnMore: string;
     roastedTitle: string;
     roastedDesc: string;
@@ -186,15 +187,16 @@ const en: Translations = {
     sizesBadge: '500ml & 1000ml Available',
   },
   brandIntro: {
-    badge: 'Our Heritage & Philosophy',
+    badge: 'Hetauda, Nepal • Pure Quality',
     title: 'Dakshina Tel Mill',
-    subtitle: 'Two Distinct Culinary Traditions, One Uncompromising Standard',
-    description: 'Based in Hetauda, Nepal, Dakshina Tel Mill is dedicated to processing high-grade mustard seeds with unmatched care. Whether you prefer the intense aroma and fiery depth of traditional roasted Chepuwa oil or the nutrient-dense purity of natural cold-pressed Kacchi Ghani oil, Dakshina delivers authentic excellence to every kitchen and merchant.',
+    subtitle: 'Preserving Tradition. Delivering Authentic Quality.',
+    description: 'Based in the heart of Hetauda, Makwanpur, Nepal, Dakshina Tel Mill is dedicated to producing authentic, high-quality mustard oil using carefully selected mustard seeds and traditional Newari-style oil-making techniques.\n\nMore than just mustard oil, Dakshina represents a legacy of heritage, craftsmanship, and purity. By preserving the authentic Newari tradition of oil extraction, we bring the rich aroma, natural goodness, and traditional taste of mustard oil to households and retailers across Nepal.',
+    tagline: 'Two Distinct Culinary Traditions, One Commitment to Authentic Quality.',
     learnMore: 'Discover Our Mill Story',
-    roastedTitle: 'Traditional Roasted (भुटेको चेपुवा)',
-    roastedDesc: 'Slow-roasted seeds pressed for robust aroma, pungent punch, and deep golden color.',
-    coldPressedTitle: 'Pure Cold-Pressed (कच्ची घानी)',
-    coldPressedDesc: 'Pressed without thermal degradation to safeguard essential fatty acids and antioxidants.',
+    roastedTitle: 'Roasted Chepuwa Mustard Oil',
+    roastedDesc: 'Slow-roasted seeds pressed for rich aroma, traditional bold flavour, and deep golden color.',
+    coldPressedTitle: 'Cold-Pressed Kacchi Ghani Mustard Oil',
+    coldPressedDesc: 'Crafted without thermal heat to retain the natural qualities and wholesome purity of mustard seeds.',
   },
   products: {
     badge: 'Our Complete Range',
@@ -413,14 +415,15 @@ const ne: Translations = {
     sizesBadge: '५०० मि.लि. र १००० मि.लि. दुवैमा उपलब्ध',
   },
   brandIntro: {
-    badge: 'हाम्रो परम्परा र मूल्यमान्यता',
+    badge: 'हेटौंडा मिल • शुद्ध गुणस्तर',
     title: 'दक्षिणा तेल मिल',
-    subtitle: 'दुई विशिष्ट उत्पादन, एउटै उच्च गुणस्तर',
-    description: 'हेटौंडा, मकवानपुर, नेपालमा अवस्थित दक्षिणा तेल मिलले उत्कृष्ट तोरीका बीउहरूबाट परम्परागत भुटेको चेपुवा तेल र आधुनिक स्वास्थ्य अनुकूल कच्ची घानी (कोल्ड प्रेस्ड) तोरीको तेल उत्पादन गर्दछ। तपाईंको स्वाद र स्वास्थ्यको आवश्यकता अनुसार ५०० मि.लि. र १ लिटरका सुरक्षित पाउचहरूमा उपलब्ध गराउँछौं।',
+    subtitle: 'परम्पराको संरक्षण। मौलिक गुणस्तरको प्रत्याभूति।',
+    description: 'हेटौंडा, मकवानपुर, नेपालको मुटुमा अवस्थित दक्षिणा तेल मिलले सावधानीपूर्वक छानिएका तोरीका बीउ र परम्परागत नेवारी शैलीको तेल उत्पादन प्रविधि प्रयोग गरी शुद्ध, प्रामाणिक र उच्च गुणस्तरको तोरीको तेल उत्पादन गर्दछ।\n\nकेवल तोरीको तेल मात्र नभई, दक्षिणाले विरासत, परम्परागत शिल्पकारिता र शुद्धताको गौरवमय प्रतिनिधित्व गर्दछ। तेल निष्कासनको प्रामाणिक नेवारी परम्परालाई जोगाउँदै, हामी तोरीको तेलको समृद्ध सुगन्ध, प्राकृतिक पोषण र मौलिक स्वाद नेपालभरका घरपरिवार र खुद्रा विक्रेताहरूसम्म पुर्‍याउँछौं।',
+    tagline: 'दुई विशिष्ट परम्परा, प्रामाणिक गुणस्तरप्रति एउटै प्रतिबद्धता।',
     learnMore: 'हाम्रो कथा र मिलबारे जान्नुहोस्',
-    roastedTitle: 'परम्परागत भुटेको तोरीको तेल (चेपुवा)',
-    roastedDesc: 'तोरीलाई विधिपूर्वक भुटेर निकालिएको, तीखो बास्ना र समृद्ध परम्परागत स्वाद।',
-    coldPressedTitle: 'प्राकृतिक कच्ची घानी (कोल्ड प्रेस्ड)',
+    roastedTitle: 'भुटेको तोरीको तेल (चेपुवा)',
+    roastedDesc: 'दाउराको आगोमा विधिपूर्वक भुटेर निकालिएको, तीखो बास्ना र समृद्ध परम्परागत स्वाद।',
+    coldPressedTitle: 'कच्ची घानी तोरीको तेल (कोल्ड प्रेस्ड)',
     coldPressedDesc: 'कुनै ताप बिना कम तापक्रममा पेलिएको, प्राकृतिक पोषण र एन्टिअक्सिडेन्टले भरिपूर्ण।',
   },
   products: {

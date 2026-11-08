@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { ArrowRight, Flame, Sparkles, Building2 } from 'lucide-react';
+import { ArrowRight, Flame, Sparkles } from 'lucide-react';
 import GSAPReveal from '@/components/ui/GSAPReveal';
 
 export default function BrandIntroSection() {
@@ -84,60 +84,74 @@ export default function BrandIntroSection() {
           </GSAPReveal>
 
           {/* Narrative Content (7 Cols) */}
-          <GSAPReveal direction="right" className="lg:col-span-7 order-1 lg:order-2">
+          <GSAPReveal direction="right" className="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center">
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-500/10 text-[#241A0B] text-xs font-bold uppercase tracking-wider mb-4">
-              <Building2 className="w-3.5 h-3.5 text-amber-600" />
-              <span>{t.brandIntro.badge}</span>
-            </div>
-
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#241A0B] tracking-tight leading-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#241A0B] tracking-tight leading-tight mb-2">
               {t.brandIntro.title}
             </h2>
 
-            <p className="text-base sm:text-lg font-bold text-amber-700 mb-5">
+            <p className="text-base sm:text-lg font-bold text-amber-800 mb-4">
               {t.brandIntro.subtitle}
             </p>
 
-            <div className="w-16 h-1 bg-amber-500 mb-6 rounded-full" />
+            <div className="w-16 h-1 bg-amber-500 mb-5 rounded-full" />
 
-            <p className="text-base text-[#6B5E4A] leading-relaxed mb-8 font-normal">
-              {t.brandIntro.description}
-            </p>
+            {/* Concise, Well-Spaced Narrative */}
+            <div className="text-sm sm:text-base text-[#5A4D3B] leading-relaxed mb-6 space-y-3 font-normal">
+              {t.brandIntro.description.split('\n\n').map((paragraph, index) => (
+                <p key={index}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
-            {/* Dual Processing Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {/* Signature Tagline Callout */}
+            {/* {t.brandIntro.tagline && (
+              <div className="mb-6 p-3.5 rounded-xl bg-[#FFFBF0] border-l-4 border-amber-500 text-xs sm:text-sm font-bold text-[#241A0B]">
+                {t.brandIntro.tagline}
+              </div>
+            )} */}
 
-              <div className="p-5 rounded-xl bg-[#FFFBF0] border border-amber-500/20">
-                <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center mb-3 text-red-700">
-                  <Flame className="w-5 h-5" />
+            {/* Dual Processing Cards - Compact & Balanced */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+
+              <div className="p-4 sm:p-4.5 rounded-xl bg-[#FFFBF0] border border-amber-500/20 shadow-xs hover:border-amber-500/40 transition-colors">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-red-100 border border-red-200 flex items-center justify-center text-red-700 shrink-0">
+                    <Flame className="w-4 h-4" />
+                  </div>
+                  <h4 className="font-extrabold text-[#241A0B] text-sm leading-snug">
+                    {t.brandIntro.roastedTitle}
+                  </h4>
                 </div>
-                <h4 className="font-bold text-[#241A0B] text-base mb-1">
-                  {t.brandIntro.roastedTitle}
-                </h4>
-                <p className="text-xs text-[#6B5E4A] leading-relaxed">
+                <p className="text-xs text-[#5A4D3B] leading-relaxed">
                   {t.brandIntro.roastedDesc}
                 </p>
               </div>
 
-              <div className="p-5 rounded-xl bg-[#FFFBF0] border border-amber-500/20">
-                <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center mb-3 text-emerald-700">
-                  <Sparkles className="w-5 h-5" />
+              <div className="p-4 sm:p-4.5 rounded-xl bg-[#FFFBF0] border border-amber-500/20 shadow-xs hover:border-amber-500/40 transition-colors">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <h4 className="font-extrabold text-[#241A0B] text-sm leading-snug">
+                    {t.brandIntro.coldPressedTitle}
+                  </h4>
                 </div>
-                <h4 className="font-bold text-[#241A0B] text-base mb-1">
-                  {t.brandIntro.coldPressedTitle}
-                </h4>
-                <p className="text-xs text-[#6B5E4A] leading-relaxed">
+                <p className="text-xs text-[#5A4D3B] leading-relaxed">
                   {t.brandIntro.coldPressedDesc}
                 </p>
               </div>
 
             </div>
 
-            <Link href="/about" className="btn-corp-secondary text-sm font-bold">
-              <span>{t.brandIntro.learnMore}</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            {/* Action CTA */}
+            <div>
+              <Link href="/about" className="btn-corp-secondary text-sm font-bold inline-flex items-center gap-2 py-3 px-5.5 shadow-xs hover:shadow-md">
+                <span>{t.brandIntro.learnMore}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
 
           </GSAPReveal>
 

@@ -207,21 +207,15 @@ export default function HeroSection() {
   });
 
   return (
-    <section className="bg-gradient-to-b from-amber-100/50 via-[#FFF8E7] to-[#FFF8E7] border-b border-amber-500/25 py-12 sm:py-16 lg:py-20 relative overflow-hidden">
-      <div className="container-custom mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <section className="bg-gradient-to-b from-amber-100/50 via-[#FFF8E7] to-[#FFF8E7] border-b border-amber-500/25 py-8 sm:py-10 lg:py-12 min-h-[calc(100vh-80px)] flex items-center relative overflow-hidden">
+      <div className="container-custom mx-auto relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Hero Content (7 Cols) */}
-          <div ref={heroContentRef} className="lg:col-span-7 text-left">
+          <div ref={heroContentRef} className="lg:col-span-7 text-left flex flex-col justify-center">
             
-            {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-amber-500/40 text-[#241A0B] text-xs font-bold uppercase tracking-wider mb-5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-              <span>Dakshina Tel Mill • Hetauda, Nepal</span>
-            </div>
-
             {/* Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#241A0B] tracking-tight leading-[1.12] mb-5">
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-[#241A0B] tracking-tight leading-[1.12] mb-4">
               <span>{t.hero.headline} </span>
               <span className="text-amber-700 block mt-1">
                 {t.hero.headlineAccent}
@@ -229,12 +223,12 @@ export default function HeroSection() {
             </h1>
 
             {/* Sub-copy */}
-            <p className="text-base sm:text-lg text-[#6B5E4A] leading-relaxed max-w-2xl mb-6 font-normal">
+            <p className="text-base sm:text-lg text-[#5A4D3B] leading-relaxed max-w-2xl mb-6 font-normal">
               {t.hero.subheadline}
             </p>
 
             {/* Direct Action Buttons: Direct WhatsApp Wholesale Inquiry + Explore Products */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-7">
               <a 
                 href={whatsAppUrl}
                 target="_blank"
@@ -251,7 +245,7 @@ export default function HeroSection() {
 
               <Link 
                 href="/products" 
-                className="btn-corp-secondary text-sm sm:text-base font-bold py-3.5 px-6"
+                className="btn-corp-secondary text-sm sm:text-base font-bold py-3.5 px-6 inline-flex items-center justify-center gap-2 shadow-xs hover:shadow-md"
               >
                 <span>{t.hero.exploreProducts}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -261,38 +255,38 @@ export default function HeroSection() {
             {/* Feature Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-amber-500/25">
               
-              <div className="p-3 rounded-xl bg-white border border-amber-500/25 shadow-sm">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <Flame className="w-4 h-4 text-red-600" />
+              <div className="p-3 rounded-xl bg-white border border-amber-500/25 shadow-xs hover:border-amber-500/40 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <Flame className="w-4 h-4 text-red-600 shrink-0" />
                   <span className="text-xs font-bold text-[#241A0B] uppercase">
                     {locale === 'ne' ? 'भुटेको चेपुवा' : 'Roasted Chepuwa'}
                   </span>
                 </div>
-                <p className="text-[11px] text-[#6B5E4A] leading-tight">
+                <p className="text-xs text-[#5A4D3B] leading-snug">
                   {locale === 'ne' ? 'परम्परागत बास्ना र तीखोपन' : 'Intense aroma & bold flavor'}
                 </p>
               </div>
 
-              <div className="p-3 rounded-xl bg-white border border-amber-500/25 shadow-sm">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <Sparkles className="w-4 h-4 text-emerald-600" />
+              <div className="p-3 rounded-xl bg-white border border-amber-500/25 shadow-xs hover:border-amber-500/40 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span className="text-xs font-bold text-[#241A0B] uppercase">
                     {locale === 'ne' ? 'कच्ची घानी' : 'Cold Pressed'}
                   </span>
                 </div>
-                <p className="text-[11px] text-[#6B5E4A] leading-tight">
+                <p className="text-xs text-[#5A4D3B] leading-snug">
                   {locale === 'ne' ? 'बिना ताप प्राकृतिक पोषण' : 'Unheated raw antioxidants'}
                 </p>
               </div>
 
-              <div className="p-3 rounded-xl bg-white border border-amber-500/25 shadow-sm">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <Package className="w-4 h-4 text-amber-600" />
+              <div className="p-3 rounded-xl bg-white border border-amber-500/25 shadow-xs hover:border-amber-500/40 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <Package className="w-4 h-4 text-amber-600 shrink-0" />
                   <span className="text-xs font-bold text-[#241A0B] uppercase">
                     {locale === 'ne' ? '५०० मि.लि. र १ लिटर' : '500ml & 1L Packs'}
                   </span>
                 </div>
-                <p className="text-[11px] text-[#6B5E4A] leading-tight">
+                <p className="text-xs text-[#5A4D3B] leading-snug">
                   {locale === 'ne' ? 'सुरक्षित पाउच र थोक कार्टुन' : 'Sealed pouches & cartons'}
                 </p>
               </div>
@@ -303,46 +297,46 @@ export default function HeroSection() {
 
           {/* Right Hero Interactive Pouch Showcase with Live Transition (5 Cols) */}
           <div className="lg:col-span-5 flex justify-center">
-            <div ref={pouchCardRef} className={`w-full max-w-md bg-white border-2 rounded-2xl p-6 sm:p-7 shadow-xl text-center relative transition-all duration-300 ${activeVariant.borderColor}`}>
+            <div ref={pouchCardRef} className={`w-full max-w-[420px] bg-white border-2 rounded-2xl p-5 sm:p-6 shadow-xl text-center relative transition-all duration-300 ${activeVariant.borderColor}`}>
               
               {/* Type Switcher Segment (Roasted vs Cold-Pressed) */}
-              <div className="flex items-center justify-center p-1 rounded-xl bg-[#FFF8E7] border border-amber-500/30 mb-4 gap-1">
+              <div className="flex items-center justify-center p-1.5 rounded-xl bg-[#FFF8E7] border border-amber-500/30 mb-3.5 gap-1.5">
                 <button
                   type="button"
                   onClick={() => handleTypeSelect('roasted')}
-                  className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                     selectedType === 'roasted'
-                      ? 'bg-red-700 text-white shadow-sm'
+                      ? 'bg-red-700 text-white shadow-xs'
                       : 'text-[#241A0B] hover:bg-white/80'
                   }`}
                 >
-                  <Flame className="w-3.5 h-3.5" />
+                  <Flame className="w-4 h-4 shrink-0" />
                   <span>{locale === 'ne' ? 'भुटेको चेपुवा' : 'Roasted'}</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => handleTypeSelect('cold-pressed')}
-                  className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                     selectedType === 'cold-pressed'
-                      ? 'bg-emerald-700 text-white shadow-sm'
+                      ? 'bg-emerald-700 text-white shadow-xs'
                       : 'text-[#241A0B] hover:bg-white/80'
                   }`}
                 >
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <Sparkles className="w-4 h-4 shrink-0" />
                   <span>{locale === 'ne' ? 'कच्ची घानी' : 'Cold-Pressed'}</span>
                 </button>
               </div>
 
               {/* Size Switcher Pills (500ml vs 1 Litre) */}
-              <div className="flex items-center justify-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2.5 mb-3">
                 <button
                   type="button"
                   onClick={() => handleSizeSelect('1000ml')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                  className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer border ${
                     selectedSize === '1000ml'
-                      ? 'bg-amber-500 text-[#241A0B] border-amber-600 shadow-sm'
-                      : 'bg-white text-[#6B5E4A] border-gray-200 hover:border-amber-400'
+                      ? 'bg-amber-500 text-[#241A0B] border-amber-600 shadow-xs'
+                      : 'bg-white text-[#5A4D3B] border-gray-200 hover:border-amber-400'
                   }`}
                 >
                   {locale === 'ne' ? '१००० मि.लि. (१ लिटर)' : '1 Litre (1000 ml)'}
@@ -351,10 +345,10 @@ export default function HeroSection() {
                 <button
                   type="button"
                   onClick={() => handleSizeSelect('500ml')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                  className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer border ${
                     selectedSize === '500ml'
-                      ? 'bg-amber-500 text-[#241A0B] border-amber-600 shadow-sm'
-                      : 'bg-white text-[#6B5E4A] border-gray-200 hover:border-amber-400'
+                      ? 'bg-amber-500 text-[#241A0B] border-amber-600 shadow-xs'
+                      : 'bg-white text-[#5A4D3B] border-gray-200 hover:border-amber-400'
                   }`}
                 >
                   {locale === 'ne' ? '५०० मि.लि.' : '500 ml'}
@@ -362,7 +356,7 @@ export default function HeroSection() {
               </div>
 
               {/* Pouch Display Area with Smooth Scale/Fade Animation */}
-              <div ref={pouchFloatingRef} className="relative w-64 h-80 sm:w-72 sm:h-96 mx-auto my-3 flex items-center justify-center">
+              <div ref={pouchFloatingRef} className="relative w-56 h-72 sm:w-64 sm:h-84 mx-auto my-2 flex items-center justify-center">
                 <div 
                   className={`relative w-full h-full transition-all duration-300 transform ${
                     isAnimating ? 'opacity-40 scale-95' : 'opacity-100 scale-100'
@@ -373,7 +367,7 @@ export default function HeroSection() {
                     alt={activeVariant.titleEn}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
-                    className="object-contain drop-shadow-xl"
+                    className="object-contain drop-shadow-lg"
                     priority
                   />
                 </div>
@@ -381,16 +375,16 @@ export default function HeroSection() {
 
               {/* Active Pouch Details & Direct WhatsApp CTA */}
               <div className="pt-3 border-t border-amber-500/20 text-left">
-                <div className="flex items-center justify-between text-xs font-bold text-[#241A0B] mb-0.5">
+                <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-[#241A0B] mb-1">
                   <span className="truncate pr-2">
                     {locale === 'ne' ? activeVariant.titleNe : activeVariant.titleEn}
                   </span>
-                  <span className="text-amber-700 shrink-0 font-extrabold">
+                  <span className="text-amber-700 shrink-0 font-extrabold text-xs">
                     {locale === 'ne' ? activeVariant.sizeNe : activeVariant.sizeEn}
                   </span>
                 </div>
                 
-                <p className="text-[11px] text-[#6B5E4A] mb-3">
+                <p className="text-xs text-[#5A4D3B] mb-3 truncate">
                   {locale === 'ne' ? activeVariant.subtitleNe : activeVariant.subtitleEn}
                 </p>
 
@@ -399,9 +393,9 @@ export default function HeroSection() {
                   href={whatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold transition-all shadow-sm cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-0.5"
                 >
-                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <MessageCircle className="w-4 h-4 fill-current shrink-0" />
                   <span>
                     {locale === 'ne' 
                       ? `${activeVariant.badgeNe} को लागि WhatsApp मा अर्डर गर्नुहोस्` 

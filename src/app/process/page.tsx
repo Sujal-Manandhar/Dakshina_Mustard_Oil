@@ -31,7 +31,7 @@ export default function ProcessPage() {
     {
       step: '01',
       titleEn: 'Raw mustard seed receiving',
-      titleNe: 'तोरि प्राप्त गर्ने र तौल गर्ने',
+      titleNe: 'तोरी प्राप्त गर्ने र तौल गर्ने',
       descEn: 'Receive mustard seeds and record their weight.',
       descNe: 'उत्कृष्ट तोरीका बीउहरू प्राप्त गरी सही तौल तथा भण्डारण रेकर्ड राखिन्छ।',
       icon: Scale,
@@ -42,7 +42,7 @@ export default function ProcessPage() {
     {
       step: '02',
       titleEn: 'Seed cleaning',
-      titleNe: 'तोरि सफा गर्ने',
+      titleNe: 'तोरी सफा गर्ने',
       descEn: 'Remove dust, stones, dirt and unwanted materials.',
       descNe: 'आधुनिक मेसिनबाट धुलो, ढुंगा, भुस र अवांछित फोहोर पूर्ण रूपमा हटाइन्छ।',
       icon: Filter,
@@ -53,7 +53,7 @@ export default function ProcessPage() {
     {
       step: '03',
       titleEn: 'Seed preparation',
-      titleNe: 'तोरि तयार गर्ने',
+      titleNe: 'तोरी तयार गर्ने',
       descEn: 'Prepare the cleaned seeds for machine processing.',
       descNe: 'सफा गरिएको तोरीलाई पेल्ने मेसिनमा पठाउनका लागि उपयुक्त रूपमा तयार गरिन्छ।',
       icon: Flame,
@@ -87,7 +87,7 @@ export default function ProcessPage() {
       step: '06',
       titleEn: 'Oil reprocessing',
       titleNe: 'बाक्लो तेल पुनः प्रशोधन गर्ने',
-      descEn: 'Reprocess separated thick oil through the machine as per your production method.',
+      descEn: 'Reprocess separated thick oil through the machine as per our production method.',
       descNe: 'छुट्याइएको बाक्लो तेललाई उत्पादन विधि अनुसार पुनः मेसिनमा प्रशोधन गरिन्छ।',
       icon: RefreshCw,
       badgeEn: 'Refined Reprocessing',
@@ -136,10 +136,7 @@ export default function ProcessPage() {
       <section className="bg-[#241A0B] text-white border-b border-amber-500/30 py-16 sm:py-20 relative">
         <div className="container-custom mx-auto">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-              <Factory className="w-4 h-4" />
-              <span>Dakshina Tel Mill • Hetauda, Nepal</span>
-            </div>
+      
 
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-5">
               {locale === 'ne' ? 'हाम्रो चरणबद्ध उत्पादन विधि' : 'Our Complete Manufacturing Process'}

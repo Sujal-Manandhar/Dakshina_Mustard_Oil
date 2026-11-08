@@ -34,10 +34,7 @@ export default function ProductsPage() {
       <section className="bg-[#241A0B] text-white border-b border-amber-500/30 py-16 sm:py-20 relative overflow-hidden">
         <div className="container-custom mx-auto relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-              <Building2 className="w-4 h-4" />
-              <span>{t.products.badge}</span>
-            </div>
+
 
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-5">
               {t.products.title}
