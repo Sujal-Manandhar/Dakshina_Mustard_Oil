@@ -48,7 +48,7 @@ export default function ManufacturingSection() {
                   <Flame className="w-6 h-6" />
                 </div>
                 <span className="px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-white/10 text-amber-300 border border-amber-500/30">
-                  Line 01
+                  {locale === 'ne' ? 'प्रकार ०१' : 'Type 01'}
                 </span>
               </div>
 
@@ -83,7 +83,7 @@ export default function ManufacturingSection() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <span className="px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-white/10 text-amber-300 border border-amber-500/30">
-                  Line 02
+                  {locale === 'ne' ? 'प्रकार ०२' : 'Type 02'}
                 </span>
               </div>
 
