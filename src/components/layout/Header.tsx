@@ -10,7 +10,8 @@ import {
   MapPin, 
   ArrowRight, 
   Menu, 
-  X
+  X,
+  Globe
 } from 'lucide-react';
 
 export default function Header() {
@@ -50,8 +51,8 @@ export default function Header() {
           <nav className="flex items-center justify-between gap-4">
             
             {/* Brand Logo & Identity */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-10 h-14 sm:w-11 sm:h-16 relative group-hover:scale-105 transition-transform duration-300 shrink-0">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink min-w-0">
+              <div className="w-8 h-12 sm:w-11 sm:h-16 relative group-hover:scale-105 transition-transform duration-300 shrink-0">
                 <Image
                   src="/images/products/roasted-1l.png"
                   alt="Dakshina Mustard Oil Pouch"
@@ -60,13 +61,13 @@ export default function Header() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-serif-heading font-bold text-[#2D1F07] leading-tight tracking-wide">
+              <div className="flex flex-col min-w-0">
+                <span className="text-base sm:text-2xl font-serif-heading font-bold text-[#2D1F07] leading-tight tracking-tight sm:tracking-wide truncate">
                   {locale === 'ne' ? 'दक्षिणा तोरीको तेल' : 'Dakshina Mustard Oil'}
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-bold text-amber-700 tracking-wider uppercase flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-amber-600 inline" />
-                  <span>{locale === 'ne' ? 'दक्षिणा तेल मिल • हेटौंडा' : 'Dakshina Tel Mill • Hetauda'}</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-amber-700 tracking-wider uppercase flex items-center gap-1 truncate">
+                  <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-600 inline shrink-0" />
+                  <span className="truncate">{locale === 'ne' ? 'दक्षिणा तेल मिल • हेटौंडा' : 'Dakshina Tel Mill • Hetauda'}</span>
                 </span>
               </div>
             </Link>
@@ -94,8 +95,11 @@ export default function Header() {
             {/* Desktop Right Actions: Segmented Language Switcher + Trade CTA */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               
-              {/* Direct Integrated Language Switcher */}
-              <div className="inline-flex rounded-full bg-[#FFF8E7] p-1 border border-amber-500/40 shadow-inner">
+              {/* Direct Integrated Language Switcher with Globe Icon */}
+              <div className="inline-flex items-center rounded-full bg-[#FFF8E7] p-1 border border-amber-500/40 shadow-inner gap-1">
+                <div className="pl-2 pr-1 text-amber-800">
+                  <Globe className="w-3.5 h-3.5" />
+                </div>
                 <button
                   type="button"
                   onClick={() => setLocale('en')}
@@ -105,7 +109,7 @@ export default function Header() {
                       : 'text-amber-900/70 hover:text-amber-900'
                   }`}
                 >
-                  EN
+                  Eng
                 </button>
                 <button
                   type="button"
@@ -131,22 +135,28 @@ export default function Header() {
             </div>
 
             {/* Mobile Controls */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden shrink-0">
+              
+              {/* Clear, Professional Mobile Language Pill with Globe Icon */}
               <button
                 type="button"
                 onClick={toggleLocale}
-                className="px-3 py-1.5 rounded-full bg-[#FFF8E7] border border-amber-500/40 text-xs font-bold text-[#2D1F07] hover:bg-amber-400 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FFF8E7] hover:bg-amber-100 active:bg-amber-200 border border-amber-500/40 text-xs font-bold text-[#2D1F07] shadow-xs cursor-pointer transition-colors"
+                aria-label="Switch Language"
               >
-                {locale === 'en' ? '🇳🇵 नेपाली' : '🇬🇧 EN'}
+                <Globe className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                <span className="font-extrabold text-[12px]">{locale === 'en' ? 'नेपाली' : 'Eng'}</span>
               </button>
 
+              {/* Hamburger Button */}
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-xl text-[#2D1F07] hover:bg-amber-50 border border-amber-500/30 cursor-pointer"
+                className="w-10 h-10 rounded-xl text-[#2D1F07] bg-[#FFF8E7] hover:bg-amber-100/80 active:bg-amber-200 border border-amber-500/30 flex items-center justify-center cursor-pointer transition-colors"
                 aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+                aria-expanded={isMenuOpen}
               >
-                {isMenuOpen ? <X className="w-6 h-6 text-red-700" /> : <Menu className="w-6 h-6" />}
+                {isMenuOpen ? <X className="w-5 h-5 text-red-700" /> : <Menu className="w-5 h-5 text-[#241A0B]" />}
               </button>
             </div>
 
@@ -156,9 +166,41 @@ export default function Header() {
 
       {/* Mobile Menu Drawer */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b-2 border-amber-500/40 shadow-2xl">
-          <div className="container-custom mx-auto py-5 space-y-3">
+        <div className="lg:hidden bg-white border-b-2 border-amber-500 shadow-xl animate-in slide-in-from-top-2 duration-200">
+          <div className="container-custom mx-auto py-5 space-y-4">
             
+            {/* Quick in-menu Language Switcher Bar */}
+            <div className="flex items-center justify-between p-3 rounded-xl bg-[#FFF8E7] border border-amber-500/30">
+              <span className="text-xs font-extrabold uppercase tracking-wider text-[#241A0B] flex items-center gap-1.5">
+                <Globe className="w-3.5 h-3.5 text-amber-700" />
+                <span>{locale === 'ne' ? 'भाषा (Language)' : 'Language'}</span>
+              </span>
+              <div className="inline-flex rounded-lg bg-white p-0.5 border border-amber-500/30">
+                <button
+                  type="button"
+                  onClick={() => setLocale('en')}
+                  className={`px-3 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                    locale === 'en'
+                      ? 'bg-amber-500 text-[#2D1F07] font-extrabold shadow-xs'
+                      : 'text-[#6B5E4A] hover:text-[#241A0B]'
+                  }`}
+                >
+                  Eng
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLocale('ne')}
+                  className={`px-3 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                    locale === 'ne'
+                      ? 'bg-amber-500 text-[#2D1F07] font-extrabold shadow-xs'
+                      : 'text-[#6B5E4A] hover:text-[#241A0B]'
+                  }`}
+                >
+                  नेपाली
+                </button>
+              </div>
+            </div>
+
             <div className="space-y-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -168,7 +210,7 @@ export default function Header() {
                     href={link.href}
                     className={`block px-4 py-3 rounded-xl text-base font-bold transition-all ${
                       isActive
-                        ? 'bg-amber-500 text-[#2D1F07]'
+                        ? 'bg-amber-500 text-[#2D1F07] shadow-xs'
                         : 'text-[#2D1F07] hover:bg-[#FFF8E7]'
                     }`}
                   >
@@ -178,13 +220,13 @@ export default function Header() {
               })}
             </div>
 
-            <div className="pt-4 border-t border-amber-500/20">
+            <div className="pt-2 border-t border-amber-500/20">
               <Link
                 href="/contact"
-                className="btn-gold-luxury w-full text-center text-sm font-bold py-3.5"
+                className="btn-gold-luxury w-full text-center text-sm font-bold py-3.5 block"
               >
                 <span>{t.nav.enquireNow}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 inline ml-2" />
               </Link>
             </div>
 
